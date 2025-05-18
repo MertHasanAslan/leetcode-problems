@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+
+        int answer = 0;
+
+        // xor operator
+        // A^A^B^C^B = C
+        // it does not care about the position of the number in the nums array!
+        for (int i : nums){
+            answer ^= i; 
+        }
+
+        return answer;
+    }
+};
