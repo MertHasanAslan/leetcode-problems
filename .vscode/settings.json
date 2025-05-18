@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "ios": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "136_single number": "cpp"
     }
 }
