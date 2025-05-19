@@ -1,0 +1,30 @@
+class Solution {
+public:
+    // if it is bipartite, adjacent nodes can not be same color!
+    // 0 = uncolored, 1 = color of set A, -1 = color of set B
+    bool isBipartite(vector<vector<int>>& graph) {
+        vector<int> colors(graph.size());
+        queue<int> q;
+
+
+        for (int i = 0; i < graph.size(); i++){
+            if (colors[i] != 0) { continue; } // if already colored, continue
+
+            colors[i] = 1; // start painting first node.
+            for (q.push(i); q.empty() != true; q.pop()){ 
+                int curr_node = q.front();
+
+                for (auto& node : graph[curr_node]){ // visit neighbors
+                    if (colors[node] == 0){ // if adjacent node is uncolored, make opposite color
+                        colors[node] = -colors[curr_node];
+                        q.push(node); // add new node to queue;
+                    }
+                    else if(colors[node] == colors[curr_node]) { return false; } // if adjacent nodes color is same, it is not bipartite!
+                }
+
+            }
+        }
+
+        return true;
+    }
+};
