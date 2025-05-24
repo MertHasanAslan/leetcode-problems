@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<vector<int>> results;
+        results.push_back(vector<int>()); //empty set
+
+        for (int i = 0; i < nums.size(); i++){
+            int size = results.size(); // so that when new subset added you can still stop from this size
+            vector<int> subset;
+            for(int j = 0; j < size; j++){
+                subset = results[j];
+                subset.push_back(nums[i]); // add new number to all subsets
+                results.push_back(subset); // add new subset
+            }
+        }
+        return results;
+    }
+};
