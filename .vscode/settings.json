@@ -2,6 +2,7 @@
     "files.associations": {
         "ios": "cpp",
         "xiosbase": "cpp",
-        "136_single number": "cpp"
+        "136_single number": "cpp",
+        "vector": "cpp"
     }
 }
