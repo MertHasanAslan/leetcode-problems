@@ -3,6 +3,7 @@
         "ios": "cpp",
         "xiosbase": "cpp",
         "136_single number": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp"
     }
 }
